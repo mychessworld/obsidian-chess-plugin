@@ -14,16 +14,6 @@ An [Obsidian](https://obsidian.md/) community plugin that renders interactive ch
 - **Multi-board pages** — several boards on one note; analysis runs in a shared queue (configurable limit)
 - **Adjustable board size** — 200–1000 px in plugin settings
 
-## Requirements
-
-| Component | Required for | Notes |
-|-----------|--------------|-------|
-| Obsidian **0.15.0+** | Everything | Desktop app recommended |
-| **Node.js** | Stockfish analysis | Used to run the bundled Stockfish WASM engine as a subprocess |
-| `package/bin/stockfish-18-lite-single.js` + `.wasm` | Stockfish analysis | Both files must be present in the plugin folder |
-
-Board rendering works without Node.js. **Stockfish evaluation requires the desktop Obsidian app** and a working `node` executable on your system PATH (or a path configured via `OBSIDIAN_CHESS_NODE`; see [Troubleshooting](#troubleshooting)).
-
 ## Installation
 
 ### Manual install (from GitHub)
@@ -136,42 +126,6 @@ Open **Settings → Community plugins → Chess PGN/FEN Viewer**:
 | Max boards per page | 5 | How many boards on one note receive analysis (1–10) |
 
 Boards beyond the limit still render normally; their panel shows a limit message instead of running Stockfish.
-
-## Troubleshooting
-
-### Board does not appear
-
-- Use language tags **`pgn`** or **`fen`** on the code block (not `chess` or plain text).
-- View the note in **Reading view** or **Live Preview** (not Source-only mode).
-- Check the developer console (**Ctrl+Shift+I**) for errors.
-
-### Stockfish shows “Waiting…”, an error, or never updates
-
-1. **Install Node.js** and ensure `node` runs from a terminal:
-   ```bash
-   node --version
-   ```
-2. Confirm both Stockfish files exist in `package/bin/`.
-3. Reload Obsidian after installing Node or updating the plugin.
-4. On Windows, Node is usually found at `C:\Program Files\nodejs\node.exe`. If it is installed elsewhere, set a custom path before starting Obsidian:
-   ```powershell
-   $env:OBSIDIAN_CHESS_NODE = "C:\Path\To\node.exe"
-   ```
-5. Open **Settings** and confirm **Stockfish evaluation** is enabled and the board is within **Max boards per page**.
-6. Check `obsidian.log` (Help → Open log folder) for lines starting with `Stockfish:`.
-
-### Analysis is slow on notes with many boards
-
-This is expected: one engine instance analyzes positions serially. Reduce **Max boards per page**, lower **Stockfish depth**, or split games across multiple notes.
-
-## Development
-
-This repository ships a pre-built `main.js` bundle. The plugin registers two Markdown code block processors:
-
-- `pgn` → interactive game viewer
-- `fen` → static position board
-
-After changing source or rebuilding, copy the updated files into `.obsidian/plugins/obsidian-chess-plugin/` and reload Obsidian.
 
 ## License & third-party components
 
