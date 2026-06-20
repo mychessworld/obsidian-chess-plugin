@@ -55,13 +55,6 @@ Create a fenced code block with language `pgn`:
 
 ````markdown
 ```pgn
-[Event "Example Game"]
-[Site "?"]
-[Date "????.??.??"]
-[White "Alice"]
-[Black "Bob"]
-[Result "1-0"]
-
 1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7
 ```
 ````
@@ -75,7 +68,6 @@ Switch to **Reading view** or **Live Preview** to see the board. Use the move li
 ````markdown
 ```pgn
 [FEN "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3"]
-[SetUp "1"]
 
 3. Bb5 a6 4. Ba4 Nf6
 ```
