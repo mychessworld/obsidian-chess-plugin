@@ -77,9 +77,9 @@ fen: rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1
 
 ````markdown
 ```pgn
-fen: rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+fen: 8/1N2k2p/r2pp1p1/P1p1n3/R7/6PP/5P2/5K2 b - - 6 31
 
-1. d4 d5 2. c4
+31... Kd7 32. f4 Nc6 0-1 *
 ```
 ````
 
