@@ -1,0 +1,288 @@
+/* Цвета шахматной доски */
+.obsidian-chess-plugin-container cg-board {
+  background-color: #EBECD0;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxnIGlkPSJhIj48ZyBpZD0iYiI+PGcgaWQ9ImMiPjxnIGlkPSJkIj48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBpZD0iZSIgZmlsbD0iI0VCRUNEMCIvPjx1c2UgeD0iMSIgeT0iMSIgaHJlZj0iI2UiLz48cmVjdCB5PSIxIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBpZD0iZiIgZmlsbD0iIzczOTU1MiIvPjx1c2UgeD0iMSIgeT0iLTEiIGhyZWY9IiNmIi8+PC9nPjx1c2UgeD0iMiIgaHJlZj0iI2QiLz48L2c+PHVzZSB4PSI0IiBocmVmPSIjYyIvPjwvZz48dXNlIHk9IjIiIGhyZWY9IiNiIi8+PC9nPjx1c2UgeT0iNCIgaHJlZj0iI2EiLz48L3N2Zz4=');
+}
+
+/* Панель кнопок: принудительное горизонтальное расположение */
+.obsidian-chess-plugin-container .buttons,
+.obsidian-chess-plugin-container .default.buttons,
+.obsidian-chess-plugin-container [class*="buttons"] {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  gap: 8px !important;
+  margin-top: 18px !important;
+  margin-bottom: 2px !important;
+  /* Было 5px, теперь 2px как в пазлах */
+  width: 100% !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Стилизация ВСЕХ непосредственных потомков контейнера кнопок под стиль пазлов */
+.obsidian-chess-plugin-container .buttons>*,
+.obsidian-chess-plugin-container .default.buttons>*,
+.obsidian-chess-plugin-container [class*="buttons"]>*,
+.obsidian-chess-plugin-container .pgnvbutton {
+  flex: 1 1 auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 5px 4px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  background-color: var(--background-secondary) !important;
+  border: 1px solid var(--background-modifier-border) !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  color: var(--text-normal) !important;
+  white-space: nowrap !important;
+  transition: all 0.2s ease !important;
+  box-sizing: border-box !important;
+  height: 27px !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+
+/* Ховер для всех элементов кнопок */
+.obsidian-chess-plugin-container .buttons>*:hover,
+.obsidian-chess-plugin-container .default.buttons>*:hover,
+.obsidian-chess-plugin-container .pgnvbutton:hover {
+  background-color: var(--background-secondary-alt) !important;
+  border-color: var(--interactive-accent) !important;
+  color: var(--interactive-accent) !important;
+}
+
+/* Скрываем иконки и лишние элементы внутри кнопок */
+.obsidian-chess-plugin-container .buttons>* i,
+.obsidian-chess-plugin-container .pgnvbutton i {
+  display: none !important;
+}
+
+.obsidian-chess-plugin-container .moves.inline {
+  display: block !important;
+  width: 100% !important;
+  max-height: 150px !important;
+  overflow-y: auto !important;
+  border: 1px solid var(--background-modifier-border) !important;
+  border-radius: 4px !important;
+  margin-top: 16px !important;
+  padding: 8px !important;
+  box-sizing: border-box !important;
+}
+
+/* Возвращаем "руку" для всей области ходов */
+.obsidian-chess-plugin-container .moves.inline * {
+  cursor: pointer !important;
+}
+
+/* Стилизация полосы прокрутки для области ходов */
+.obsidian-chess-plugin-container .moves.inline::-webkit-scrollbar {
+  width: 10px !important;
+  display: block !important;
+}
+
+.obsidian-chess-plugin-container .moves.inline::-webkit-scrollbar-thumb {
+  background-color: var(--text-muted) !important;
+  border-radius: 10px !important;
+  cursor: pointer !important;
+}
+
+.obsidian-chess-plugin-container .moves.inline::-webkit-scrollbar-track {
+  background-color: var(--background-secondary) !important;
+  cursor: pointer !important;
+}
+
+
+
+/* Высота всего контейнера */
+.cm-preview-code-block.cm-embed-block.markdown-rendered.cm-lang-pgn .obsidian-chess-plugin-container {
+  height: auto !important;
+}
+
+/* Скрываем элемент cg-resize */
+.obsidian-chess-plugin-container cg-resize {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.obsidian-chess-plugin-container .default.board.cg-wrap.orientation-white.manipulable.coords-inner,
+.obsidian-chess-plugin-container .default.board.cg-wrap.orientation-black.manipulable.coords-inner,
+.obsidian-chess-plugin-container .board {
+  width: calc(var(--chess-plugin-size, 500) * 1px) !important;
+  height: calc(var(--chess-plugin-size, 500) * 1px) !important;
+  margin-bottom: 0 !important;
+  margin: 0 !important;
+}
+
+.obsidian-chess-plugin-container .outerBoard {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+/* Главный контейнер: увеличиваем область, чтобы координаты не обрезались */
+.obsidian-chess-plugin-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  margin: 0 auto !important;
+  width: calc(var(--chess-plugin-size, 500) * 1px) !important;
+  height: auto !important;
+  padding: 24px !important;
+  /* Равномерное место для координат со всех сторон */
+  box-sizing: content-box !important;
+}
+
+/* Убираем сетку, которая может навязываться библиотекой */
+.obsidian-chess-plugin-container .pgnvjs,
+.obsidian-chess-plugin-container.pgnvjs {
+  display: flex !important;
+  flex-direction: column !important;
+  grid-template-columns: none !important;
+  grid-template-rows: none !important;
+}
+
+/* --- Координаты снаружи доски --- */
+
+/* Разрешаем отображение элементов за пределами доски */
+.obsidian-chess-plugin-container .cg-wrap {
+  overflow: visible !important;
+}
+
+/* Цифры (ranks) — выносим вправо */
+.obsidian-chess-plugin-container coords.ranks {
+  right: -18px !important;
+  top: 0 !important;
+  height: 100% !important;
+  width: 20px !important;
+  display: flex !important;
+  flex-direction: column-reverse !important;
+  justify-content: space-around !important;
+  align-items: center !important;
+}
+
+/* Буквы (files) — выносим вниз */
+.obsidian-chess-plugin-container coords.files {
+  bottom: -20px !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 20px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-around !important;
+  align-items: center !important;
+
+}
+
+/* Сохранение логики переворота доски (orientation-black) */
+.obsidian-chess-plugin-container .cg-wrap.orientation-black coords.ranks {
+  flex-direction: column !important;
+}
+
+.obsidian-chess-plugin-container .cg-wrap.orientation-black coords.files {
+  flex-direction: row-reverse !important;
+  margin-bottom: 0px !important;
+}
+
+/* Стилизация самих символов для лучшей видимости на фоне */
+.obsidian-chess-plugin-container coords coord {
+  position: static !important;
+  color: var(--text-normal) !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+  font-size: 10px !important;
+}
+
+.obsidian-chess-plugin-container .default.buttons {
+  margin-top: 23px !important;
+}
+
+.obsidian-chess-plugin-container .stockfish-evaluation-panel {
+  width: 100% !important;
+  margin-top: 12px !important;
+  padding: 10px 12px !important;
+  border: 1px solid var(--background-modifier-border) !important;
+  border-radius: 6px !important;
+  background: var(--background-secondary) !important;
+  color: var(--text-normal) !important;
+  box-sizing: border-box !important;
+}
+
+.obsidian-chess-plugin-container .stockfish-evaluation-header,
+.obsidian-chess-plugin-container .stockfish-evaluation-details {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.obsidian-chess-plugin-container .stockfish-evaluation-title {
+  font-weight: 700 !important;
+}
+
+.obsidian-chess-plugin-container .stockfish-evaluation-score {
+  font-weight: 800 !important;
+  color: var(--interactive-accent) !important;
+}
+
+.obsidian-chess-plugin-container .stockfish-evaluation-details {
+  margin-top: 6px !important;
+  color: var(--text-muted) !important;
+  font-size: 12px !important;
+}
+
+.obsidian-chess-plugin-container .stockfish-evaluation-best {
+  flex-shrink: 0 !important;
+}
+
+.obsidian-chess-plugin-container .stockfish-evaluation-pv {
+  margin-top: 4px !important;
+  color: var(--text-normal) !important;
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+  word-break: break-word !important;
+}
+
+.obsidian-chess-plugin-container .stockfish-evaluation-bar {
+  width: 100% !important;
+  height: 7px !important;
+  margin-top: 8px !important;
+  overflow: hidden !important;
+  border-radius: 999px !important;
+  background: var(--background-primary-alt) !important;
+}
+
+.obsidian-chess-plugin-container .stockfish-evaluation-bar-fill {
+  width: 50%;
+  height: 100% !important;
+  background: var(--interactive-accent) !important;
+  transition: width 0.2s ease !important;
+}
+
+.obsidian-chess-plugin-container .stockfish-evaluation-error .stockfish-evaluation-score {
+  color: var(--text-error) !important;
+}
+
+/* Цвет текста внутренней ссылки */
+.cm-hmd-internal-link .cm-underline {
+	color: #0000FF !important; /* Замените на ваш цвет */
+  font-weight: 700;
+}
+
+/* Цвет текста внутренней ссылки в режиме чтения */
+.internal-link {
+	color: #0000FF !important; /* Замените на ваш цвет */
+  font-weight: 700;
+}
