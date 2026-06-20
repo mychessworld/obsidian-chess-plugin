@@ -67,9 +67,9 @@ Switch to **Reading view** or **Live Preview** to see the board. Use the move li
 
 ````markdown
 ```pgn
-[FEN "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3"]
+fen: rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1
 
-3. Bb5 a6 4. Ba4 Nf6
+1... e6 (1...e5) (1...c5) 2. d4 d5 3. Nc3 Nf6 4. e5 {The most forcing move in the position leading to the Classical Variation.} Nfd7 5. Nf3 *
 ```
 ````
 
