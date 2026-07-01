@@ -1,9 +1,9 @@
 {
-	"id": "obsidian-chess-plugin",
-	"name": "Chess PGN/FEN Viewer",
-	"version": "1.0.1",
-	"minAppVersion": "0.15.0",
-	"description": "View chess games (PGN) and positions (FEN) using @mliebelt/pgn-viewer.",
-	"author": "Sergei Dolganov, e-mail: mychessworld@yahoo.com",
+	"id": "chess-pgn-fen-viewer",
+	"name": "Chess PGN-FEN Viewer",
+	"version": "1.1.9",
+	"minAppVersion": "1.0.0",
+	"description": "Render interactive chess boards from PGN games and FEN positions with optional Stockfish analysis.",
+	"author": "Sergei Dolganov",
 	"isDesktopOnly": false
 }

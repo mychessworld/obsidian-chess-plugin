@@ -1,13 +1,13 @@
 /* Цвета шахматной доски */
-.obsidian-chess-plugin-container cg-board {
+.chess-pgn-fen-viewer-container cg-board {
   background-color: #EBECD0;
   background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxnIGlkPSJhIj48ZyBpZD0iYiI+PGcgaWQ9ImMiPjxnIGlkPSJkIj48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBpZD0iZSIgZmlsbD0iI0VCRUNEMCIvPjx1c2UgeD0iMSIgeT0iMSIgaHJlZj0iI2UiLz48cmVjdCB5PSIxIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBpZD0iZiIgZmlsbD0iIzczOTU1MiIvPjx1c2UgeD0iMSIgeT0iLTEiIGhyZWY9IiNmIi8+PC9nPjx1c2UgeD0iMiIgaHJlZj0iI2QiLz48L2c+PHVzZSB4PSI0IiBocmVmPSIjYyIvPjwvZz48dXNlIHk9IjIiIGhyZWY9IiNiIi8+PC9nPjx1c2UgeT0iNCIgaHJlZj0iI2EiLz48L3N2Zz4=');
 }
 
 /* Панель кнопок: принудительное горизонтальное расположение */
-.obsidian-chess-plugin-container .buttons,
-.obsidian-chess-plugin-container .default.buttons,
-.obsidian-chess-plugin-container [class*="buttons"] {
+.chess-pgn-fen-viewer-container .buttons,
+.chess-pgn-fen-viewer-container .default.buttons,
+.chess-pgn-fen-viewer-container [class*="buttons"] {
   display: flex !important;
   flex-direction: row !important;
   flex-wrap: nowrap !important;
@@ -23,10 +23,10 @@
 }
 
 /* Стилизация ВСЕХ непосредственных потомков контейнера кнопок под стиль пазлов */
-.obsidian-chess-plugin-container .buttons>*,
-.obsidian-chess-plugin-container .default.buttons>*,
-.obsidian-chess-plugin-container [class*="buttons"]>*,
-.obsidian-chess-plugin-container .pgnvbutton {
+.chess-pgn-fen-viewer-container .buttons>*,
+.chess-pgn-fen-viewer-container .default.buttons>*,
+.chess-pgn-fen-viewer-container [class*="buttons"]>*,
+.chess-pgn-fen-viewer-container .pgnvbutton {
   flex: 1 1 auto !important;
   width: auto !important;
   min-width: 0 !important;
@@ -51,21 +51,21 @@
 }
 
 /* Ховер для всех элементов кнопок */
-.obsidian-chess-plugin-container .buttons>*:hover,
-.obsidian-chess-plugin-container .default.buttons>*:hover,
-.obsidian-chess-plugin-container .pgnvbutton:hover {
+.chess-pgn-fen-viewer-container .buttons>*:hover,
+.chess-pgn-fen-viewer-container .default.buttons>*:hover,
+.chess-pgn-fen-viewer-container .pgnvbutton:hover {
   background-color: var(--background-secondary-alt) !important;
   border-color: var(--interactive-accent) !important;
   color: var(--interactive-accent) !important;
 }
 
 /* Скрываем иконки и лишние элементы внутри кнопок */
-.obsidian-chess-plugin-container .buttons>* i,
-.obsidian-chess-plugin-container .pgnvbutton i {
+.chess-pgn-fen-viewer-container .buttons>* i,
+.chess-pgn-fen-viewer-container .pgnvbutton i {
   display: none !important;
 }
 
-.obsidian-chess-plugin-container .moves.inline {
+.chess-pgn-fen-viewer-container .moves.inline {
   display: block !important;
   width: 100% !important;
   max-height: 150px !important;
@@ -78,23 +78,23 @@
 }
 
 /* Возвращаем "руку" для всей области ходов */
-.obsidian-chess-plugin-container .moves.inline * {
+.chess-pgn-fen-viewer-container .moves.inline * {
   cursor: pointer !important;
 }
 
 /* Стилизация полосы прокрутки для области ходов */
-.obsidian-chess-plugin-container .moves.inline::-webkit-scrollbar {
+.chess-pgn-fen-viewer-container .moves.inline::-webkit-scrollbar {
   width: 10px !important;
   display: block !important;
 }
 
-.obsidian-chess-plugin-container .moves.inline::-webkit-scrollbar-thumb {
+.chess-pgn-fen-viewer-container .moves.inline::-webkit-scrollbar-thumb {
   background-color: var(--text-muted) !important;
   border-radius: 10px !important;
   cursor: pointer !important;
 }
 
-.obsidian-chess-plugin-container .moves.inline::-webkit-scrollbar-track {
+.chess-pgn-fen-viewer-container .moves.inline::-webkit-scrollbar-track {
   background-color: var(--background-secondary) !important;
   cursor: pointer !important;
 }
@@ -102,28 +102,28 @@
 
 
 /* Высота всего контейнера */
-.cm-preview-code-block.cm-embed-block.markdown-rendered.cm-lang-pgn .obsidian-chess-plugin-container {
+.cm-preview-code-block.cm-embed-block.markdown-rendered.cm-lang-pgn .chess-pgn-fen-viewer-container {
   height: auto !important;
 }
 
 /* Скрываем элемент cg-resize */
-.obsidian-chess-plugin-container cg-resize {
+.chess-pgn-fen-viewer-container cg-resize {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;
   pointer-events: none !important;
 }
 
-.obsidian-chess-plugin-container .default.board.cg-wrap.orientation-white.manipulable.coords-inner,
-.obsidian-chess-plugin-container .default.board.cg-wrap.orientation-black.manipulable.coords-inner,
-.obsidian-chess-plugin-container .board {
+.chess-pgn-fen-viewer-container .default.board.cg-wrap.orientation-white.manipulable.coords-inner,
+.chess-pgn-fen-viewer-container .default.board.cg-wrap.orientation-black.manipulable.coords-inner,
+.chess-pgn-fen-viewer-container .board {
   width: calc(var(--chess-plugin-size, 500) * 1px) !important;
   height: calc(var(--chess-plugin-size, 500) * 1px) !important;
   margin-bottom: 0 !important;
   margin: 0 !important;
 }
 
-.obsidian-chess-plugin-container .outerBoard {
+.chess-pgn-fen-viewer-container .outerBoard {
   margin: 0 !important;
   padding: 0 !important;
   display: flex !important;
@@ -132,7 +132,7 @@
 }
 
 /* Главный контейнер: увеличиваем область, чтобы координаты не обрезались */
-.obsidian-chess-plugin-container {
+.chess-pgn-fen-viewer-container {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
@@ -146,8 +146,8 @@
 }
 
 /* Убираем сетку, которая может навязываться библиотекой */
-.obsidian-chess-plugin-container .pgnvjs,
-.obsidian-chess-plugin-container.pgnvjs {
+.chess-pgn-fen-viewer-container .pgnvjs,
+.chess-pgn-fen-viewer-container.pgnvjs {
   display: flex !important;
   flex-direction: column !important;
   grid-template-columns: none !important;
@@ -157,12 +157,12 @@
 /* --- Координаты снаружи доски --- */
 
 /* Разрешаем отображение элементов за пределами доски */
-.obsidian-chess-plugin-container .cg-wrap {
+.chess-pgn-fen-viewer-container .cg-wrap {
   overflow: visible !important;
 }
 
 /* Цифры (ranks) — выносим вправо */
-.obsidian-chess-plugin-container coords.ranks {
+.chess-pgn-fen-viewer-container coords.ranks {
   right: -18px !important;
   top: 0 !important;
   height: 100% !important;
@@ -174,7 +174,7 @@
 }
 
 /* Буквы (files) — выносим вниз */
-.obsidian-chess-plugin-container coords.files {
+.chess-pgn-fen-viewer-container coords.files {
   bottom: -20px !important;
   left: 0 !important;
   width: 100% !important;
@@ -187,17 +187,17 @@
 }
 
 /* Сохранение логики переворота доски (orientation-black) */
-.obsidian-chess-plugin-container .cg-wrap.orientation-black coords.ranks {
+.chess-pgn-fen-viewer-container .cg-wrap.orientation-black coords.ranks {
   flex-direction: column !important;
 }
 
-.obsidian-chess-plugin-container .cg-wrap.orientation-black coords.files {
+.chess-pgn-fen-viewer-container .cg-wrap.orientation-black coords.files {
   flex-direction: row-reverse !important;
   margin-bottom: 0px !important;
 }
 
 /* Стилизация самих символов для лучшей видимости на фоне */
-.obsidian-chess-plugin-container coords coord {
+.chess-pgn-fen-viewer-container coords coord {
   position: static !important;
   color: var(--text-normal) !important;
   font-weight: 800 !important;
@@ -205,11 +205,11 @@
   font-size: 10px !important;
 }
 
-.obsidian-chess-plugin-container .default.buttons {
+.chess-pgn-fen-viewer-container .default.buttons {
   margin-top: 23px !important;
 }
 
-.obsidian-chess-plugin-container .stockfish-evaluation-panel {
+.chess-pgn-fen-viewer-container .stockfish-evaluation-panel {
   width: 100% !important;
   margin-top: 12px !important;
   padding: 10px 12px !important;
@@ -220,42 +220,43 @@
   box-sizing: border-box !important;
 }
 
-.obsidian-chess-plugin-container .stockfish-evaluation-header,
-.obsidian-chess-plugin-container .stockfish-evaluation-details {
+.chess-pgn-fen-viewer-container .stockfish-evaluation-header,
+.chess-pgn-fen-viewer-container .stockfish-evaluation-details {
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
   gap: 12px !important;
 }
 
-.obsidian-chess-plugin-container .stockfish-evaluation-title {
+.chess-pgn-fen-viewer-container .stockfish-evaluation-title {
   font-weight: 700 !important;
 }
 
-.obsidian-chess-plugin-container .stockfish-evaluation-score {
+.chess-pgn-fen-viewer-container .stockfish-evaluation-score {
   font-weight: 800 !important;
   color: var(--interactive-accent) !important;
 }
 
-.obsidian-chess-plugin-container .stockfish-evaluation-details {
+.chess-pgn-fen-viewer-container .stockfish-evaluation-details {
   margin-top: 6px !important;
   color: var(--text-muted) !important;
   font-size: 12px !important;
 }
 
-.obsidian-chess-plugin-container .stockfish-evaluation-best {
+.chess-pgn-fen-viewer-container .stockfish-evaluation-best {
   flex-shrink: 0 !important;
 }
 
-.obsidian-chess-plugin-container .stockfish-evaluation-pv {
+.chess-pgn-fen-viewer-container .stockfish-evaluation-pv {
   margin-top: 4px !important;
-  color: var(--text-normal) !important;
+  color: #722f37 !important;
   font-size: 13px !important;
+  font-weight: 600 !important;
   line-height: 1.45 !important;
   word-break: break-word !important;
 }
 
-.obsidian-chess-plugin-container .stockfish-evaluation-bar {
+.chess-pgn-fen-viewer-container .stockfish-evaluation-bar {
   width: 100% !important;
   height: 7px !important;
   margin-top: 8px !important;
@@ -264,14 +265,14 @@
   background: var(--background-primary-alt) !important;
 }
 
-.obsidian-chess-plugin-container .stockfish-evaluation-bar-fill {
-  width: 50%;
+.chess-pgn-fen-viewer-container .stockfish-evaluation-bar-fill {
+  width: var(--stockfish-eval-width, 50%);
   height: 100% !important;
   background: var(--interactive-accent) !important;
   transition: width 0.2s ease !important;
 }
 
-.obsidian-chess-plugin-container .stockfish-evaluation-error .stockfish-evaluation-score {
+.chess-pgn-fen-viewer-container .stockfish-evaluation-error .stockfish-evaluation-score {
   color: var(--text-error) !important;
 }
 
@@ -285,4 +286,16 @@
 .internal-link {
 	color: #0000FF !important; /* Замените на ваш цвет */
   font-weight: 700;
+}
+
+.chess-pgn-fen-pv-helper-host {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.stockfish-evaluation-panel.stockfish-evaluation-hidden {
+  display: none;
 }

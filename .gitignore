@@ -1,0 +1,9 @@
+# Local Obsidian / editor
+.obsidian/
+data.json
+obsidian.log
+
+# Node / OS
+node_modules/
+.DS_Store
+Thumbs.db
